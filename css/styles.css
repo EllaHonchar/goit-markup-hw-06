@@ -787,11 +787,14 @@ ul {
   top: 50%;
   transform: translateY(-50%);
   transition: fill var(--time) var(--cubic);
-  fill: var(--main-text-color);
+  fill: var(--title-text-color);
 }
 
-.modal-field:not(:last-child) {
+.modal-field {
   margin-bottom: 10px;
+}
+.modal-field.comment {
+  margin-bottom: 20px;
 }
 
 .modal-input:focus {
@@ -802,14 +805,14 @@ ul {
 }
 
 .modal-text-area {
+  display: block;
   width: 100%;
-  height: 96px;
+  height: 120px;
   border: 1px solid var(--textarea-color);
   border-radius: 4px;
   padding: 12px 16px;
   line-height: 1.17;
   letter-spacing: 0.01em;
-  margin-bottom: 12px;
   resize: none;
   outline: 1px solid transparent;
   transition: outline var(--time) var(--cubic);
@@ -819,11 +822,10 @@ ul {
 }
 
 .modal-field-checkbox {
-  padding: 0;
-  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 30px;
-  margin-left: 12px;
-  margin-right: 12px;
 }
 .check-text {
   width: 400px;
@@ -832,9 +834,6 @@ ul {
   margin-left: 7px;
 }
 
-.input-check:checked {
-  background-color: var(--button-hero-active);
-}
 /* .check-text::before {
   content: " ";
   width: 16px;
@@ -859,7 +858,6 @@ ul {
   height: 15px;
   border: 2px solid var(--main-text-color);
   border-radius: 2px;
-  background-image: url("data:image/svg+xml,%3Csymbol id='icon-check' viewBox='0 0 34 32'%3E%3Cpath fill='%23fff' style='fill: var(--color1, %23fff); stroke: var(--color1, %23fff)' stroke='%23fff' stroke-linejoin='miter' stroke-linecap='butt' stroke-miterlimit='4' stroke-width='0.4267' d='M8.442 16.537l-0.147-0.14-2.205 2.088 7.767 7.41 16.318-15.567-2.19-2.089-14.128 13.465-5.416-5.167z'%3E%3C/path%3E%3C/symbol%3E");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 0;
@@ -867,13 +865,18 @@ ul {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
+
+  transition: border-color var(--time), background-size var(--time),
+    background-color var(--time);
 }
+
 .input-check:checked {
-  background-color: #2196f3;
-  border: 1px solid transparent;
-  background-image: url("data:image/svg+xml,%3Csymbol id='icon-check' viewBox='0 0 34 32'%3E%3Cpath fill='%23fff' style='fill: var(--color1, %23fff); stroke: var(--color1, %23fff)' stroke='%23fff' stroke-linejoin='miter' stroke-linecap='butt' stroke-miterlimit='4' stroke-width='0.4267' d='M8.442 16.537l-0.147-0.14-2.205 2.088 7.767 7.41 16.318-15.567-2.19-2.089-14.128 13.465-5.416-5.167z'%3E%3C/path%3E%3C/symbol%3E");
-  background-size: 100%;
+  background-color: var(--button-hero-active);
+  border-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.95703 4.75166L1.88825 4.68604L1.81923 4.75141L0.93123 5.59258L0.854858 5.66492L0.930974 5.73753L4.42671 9.07236L4.49574 9.1382L4.56476 9.07236L12.069 1.91352L12.1449 1.84116L12.069 1.76881L11.1873 0.927644L11.1183 0.861826L11.0493 0.927611L4.49577 7.17353L1.95703 4.75166Z' fill='white' stroke='white' stroke-width='0.2'/%3E%3C/svg%3E");
+  background-size: 11px 8px;
 }
+
 .input-check:focus {
   border-color: var(--modal-bg-color);
 }
